@@ -21,6 +21,7 @@ RUN /bin/bash -l -c "rvm install 2.1.1"
 RUN git clone https://github.com/braintreeps/vim_dotfiles.git 
 RUN cd vim_dotfiles && rake
 RUN cd ~/.vim/plugged/command-t/ruby/command-t && /bin/bash -l -c "rvm use system" && ruby extconf.rb && make
+RUN [[ $TMUX = "" ]] && export TERM="xterm-256color" >> .bashrc
 
 RUN git clone https://github.com/fdm1/frank_dotfiles && cd frank_dotfiles && rake
 
