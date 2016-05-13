@@ -20,11 +20,13 @@ RUN apt-get update && apt-get install --fix-missing -y build-essential \
 
 RUN pip install pandas \
                 ipython \
-                jupyter
+                jupyter \ 
+                matplotlib
 
 RUN pip3 install pandas \
                  ipython \
-                 ipykernel
+                 ipykernel \
+                 matplotlib
 
 RUN ipython3 kernel install
 
