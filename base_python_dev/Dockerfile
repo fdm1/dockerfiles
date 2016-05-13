@@ -16,11 +16,12 @@ RUN apt-get update && apt-get install --fix-missing -y build-essential \
                           python-setuptools \
                           libpng-dev \
                           libjpeg8-dev \
-                          libfreetype6-dev
+                          libfreetype6-dev \
+                          libxft-dev
 
 RUN pip install pandas \
                 ipython \
-                jupyter \ 
+                jupyter \
                 matplotlib
 
 RUN pip3 install pandas \
