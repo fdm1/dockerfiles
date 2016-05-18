@@ -1,4 +1,4 @@
-FROM fdm1/base_dev:python3
+FROM fdm1/base_dev
 
 RUN apt-get update && apt-get install --fix-missing -y python3 \
                           python3-dev \
