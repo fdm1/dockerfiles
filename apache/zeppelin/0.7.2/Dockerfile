@@ -11,6 +11,7 @@ ENV PATH $ZEPPELIN_HOME/bin:$PATH
 RUN wget -qO - ${ZEPPELIN_BINARY_DOWNLOAD_URL} | tar -xz -C /usr/local/ && \
     cd /usr/local/ && \
     ln -s ${ZEPPELIN_BINARY_ARCHIVE_NAME} zeppelin && \
-    /usr/local/zeppelin/bin/install-interpreter.sh --name ${INTERPRETERS} 
+    /usr/local/zeppelin/bin/install-interpreter.sh --name ${INTERPRETERS}  && \
+    cp /usr/local/zeppelin/conf/zeppelin-site.xml.template /usr/local/zeppelin/conf/zeppelin-site.xml
 
 CMD ["/usr/local/zeppelin/bin/zeppelin.sh", "start"]

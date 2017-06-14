@@ -1,0 +1,19 @@
+version: "2"
+services:
+  spark-master:
+    image: fdm1/spark:2.1.1
+    command: ["/usr/local/spark/bin/spark-class", "org.apache.spark.deploy.master.Master", "--webui-port", "8082"]
+    ports:
+      - "8082:8082"
+      - "4040:4040"
+      - "7077"
+  spark-slaves:
+    image: fdm1/spark:2.1.1
+    ports:
+      - "8081:8081"
+    command: ["/usr/local/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
+  zeppelin:
+    image: fdm1/zeppelin:0.7.2
+    ports:
+      - "5000:8080"
+    command: ["/usr/local/zeppelin/bin/zeppelin.sh", "start"]
