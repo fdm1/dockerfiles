@@ -51,7 +51,11 @@ RUN git clone https://github.com/fdm1/frank_dotfiles && \
   cd frank_dotfiles && \
   rake
 
-RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+      echo 'set -g default-terminal "screen-256color"' >> ~/.tmux.conf && \
+      echo '[[ $TMUX = "" ]] && export TERM="xterm-256color"' >> ~/.bashrc
+
+
 
 
 CMD bash
