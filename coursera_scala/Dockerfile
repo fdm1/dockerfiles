@@ -9,6 +9,10 @@ RUN echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.lis
 	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823 && \
 	apt-get install -y sbt
 
+ADD example_build /example_build
+
+### build sbt/scala env
+RUN cd /example_build && sbt about
 
 ### Taken from fdm1/base_dev (tweak to libjpeg to get to work)
 
