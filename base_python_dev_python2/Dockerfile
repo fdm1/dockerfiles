@@ -1,11 +1,11 @@
 FROM fdm1/base_dev
 
-RUN apt-get update && apt-get install --fix-missing -y python3 \
-                          python3-dev \
-                          python3-pip \
+RUN apt-get update && apt-get install --fix-missing -y python \
+                          python-dev \
+                          python-pip \
                           python-setuptools
 
-RUN pip3 install pandas \
+RUN pip install pandas \
                  ipython \
                  jupyter \
                  ipykernel \

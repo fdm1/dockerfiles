@@ -1,7 +1,6 @@
-FROM fdm1/base_python_dev:python2
+FROM fdm1/base_python_dev:python3
 
-RUN apt-get install -y python-numpy python-scipy \
-                    libatlas-dev libatlas3gf-base \
-                    python-matplotlib
+RUN apt-get install -y python3-numpy python3-scipy \
+                    libatlas-dev libatlas3gf-base
 
 RUN pip install scikit-learn && pip3 install scikit-learn
