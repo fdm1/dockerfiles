@@ -51,6 +51,7 @@ RUN git clone https://github.com/fdm1/frank_dotfiles && \
   cd frank_dotfiles && \
   rake
 
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 
 
 CMD bash
