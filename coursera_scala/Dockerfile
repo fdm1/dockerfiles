@@ -2,10 +2,10 @@ FROM openjdk:8-jdk
 
 ### Install coursera requirements
 
-RUN echo "INSTALL sbt coursera requirement ====> " && /
-	apt-get update && \
-	apt-get install -y apt-transport-https && \
-  echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
+RUN apt-get update && \
+	apt-get install -y apt-transport-https
+
+RUN echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
 	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823 && \
 	apt-get install -y sbt
 
