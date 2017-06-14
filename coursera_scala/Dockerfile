@@ -35,6 +35,8 @@ RUN apt-get update && apt-get install --fix-missing -y build-essential \
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
 	locale-gen en_US.UTF-8 && \
       locale -a && \
+      echo "export LC_CTYPE=en_US.UTF-8" >> ~/.bashrc && \
+      echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc && \
       echo '[[ $TMUX = "" ]] && export TERM="xterm-256color"' >> ~/.bashrc
 
 # install rvm needed for command-t in vim_dotfiles
@@ -42,11 +44,6 @@ RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import - && \
       curl -L https://get.rvm.io | bash -s stable && \
       /bin/bash -l -c "rvm requirements" && \
       /bin/bash -l -c "rvm install 2.1.1"
-
-### Fix for Debian locale
-
-# RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-#        locale-gen "en_US.UTF-8 UTF-8"
 
 
 # vim config setup
@@ -62,9 +59,6 @@ RUN git clone https://github.com/fdm1/frank_dotfiles && \
   cd frank_dotfiles && \
   rake
 
-RUN     echo "export LC_CTYPE=en_US.UTF-8" >> ~/.bashrc && \
-     echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc 
 
-RUN sbt
 
 CMD bash
