@@ -1,4 +1,4 @@
-TAG = fdm1/spark:2.1.1
+TAG = fdm1/scala:2.12.4
 
 BASE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -17,3 +17,4 @@ interactive:
 		docker run -it $(TAG) /bin/bash
 
 all: build
+
