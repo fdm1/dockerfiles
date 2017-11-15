@@ -1,4 +1,4 @@
-TAG = fdm1/spark:2.1.1
+TAG = fdm1/spark:2.2.0-scala-sbt
 
 BASE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
