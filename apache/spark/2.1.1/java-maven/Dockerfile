@@ -1,4 +1,4 @@
-FROM fdm1/spark:2.2.0
+FROM fdm1/spark:2.1.1
 
 ARG MAVEN_VERSION=3.5.2
 ARG MAVEN_BINARY_ARCHIVE_NAME=apache-maven-${MAVEN_VERSION}-bin
