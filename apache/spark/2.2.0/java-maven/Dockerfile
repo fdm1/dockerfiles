@@ -1,8 +1,8 @@
 FROM fdm1/spark:2.2.0
 
 ARG MAVEN_VERSION=3.5.2
-ARG MAVEN_BINARY_ARCHIVE_NAME=apache-maven-${MAVEN_VERSION}-bin
-ARG MAVEN_BINARY_DOWNLOAD_URL=http://www.trieuvan.com/apache/maven/maven-3/${MAVEN_VERSION}/binaries/${MAVEN_BINARY_ARCHIVE_NAME}.tar.gz
+ARG MAVEN_BINARY_ARCHIVE_NAME=apache-maven-${MAVEN_VERSION}
+ARG MAVEN_BINARY_DOWNLOAD_URL=http://www.trieuvan.com/apache/maven/maven-3/${MAVEN_VERSION}/binaries/${MAVEN_BINARY_ARCHIVE_NAME}-bin.tar.gz
 
 ENV MAVEN_HOME    /usr/local/maven
 ENV PATH        $JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
